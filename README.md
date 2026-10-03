@@ -141,4 +141,5 @@ Link: _a preencher_
 
 | Nome | RM |
 |---|---|
+| Bruno Vinicius Barbosa | 566366 |
 | _a preencher_ | _a preencher_ |
