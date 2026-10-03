@@ -1,0 +1,24 @@
+name: Deploy DimDim
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+env:
+  WEBAPP_NAME: app-dimdim-grupo01     # ajuste
+  DOTNET_VERSION: "10.0.x"            # mesma versão do runtime do Web App
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+      - run: dotnet publish src/DimDim.Web -c Release -o publish
+      - uses: azure/webapps-deploy@v3
+        with:
+          app-name: ${{ env.WEBAPP_NAME }}
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          package: publish

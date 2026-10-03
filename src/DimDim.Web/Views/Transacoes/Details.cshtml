@@ -1,0 +1,31 @@
+@model DimDim.Web.Models.Transacao
+@{
+    ViewData["Title"] = "Detalhes da Transação";
+}
+
+<h1>Detalhes da Transação</h1>
+
+<div class="card card-dimdim mb-3" style="max-width: 500px;">
+    <div class="card-header">@Model.Descricao</div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-4">Cliente</dt>
+            <dd class="col-sm-8">@Model.Cliente?.Nome</dd>
+
+            <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Valor)</dt>
+            <dd class="col-sm-8">@Model.Valor.ToString("C2")</dd>
+
+            <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Tipo)</dt>
+            <dd class="col-sm-8">@Model.Tipo</dd>
+
+            <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Status)</dt>
+            <dd class="col-sm-8">@Model.Status</dd>
+
+            <dt class="col-sm-4">@Html.DisplayNameFor(model => model.DataTransacao)</dt>
+            <dd class="col-sm-8">@Model.DataTransacao.ToString("g")</dd>
+        </dl>
+    </div>
+</div>
+
+<a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-outline-secondary">Editar</a>
+<a asp-action="Index" class="btn btn-outline-secondary">Voltar</a>

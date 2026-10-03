@@ -1,0 +1,28 @@
+@model DimDim.Web.Models.Cliente
+@{
+    ViewData["Title"] = "Excluir Cliente";
+}
+
+<h1>Excluir Cliente</h1>
+
+<h3>Tem certeza que deseja excluir este cliente?</h3>
+<p class="text-danger">Atenção: todas as transações deste cliente também serão excluídas.</p>
+
+<div class="card card-dimdim mb-3" style="max-width: 500px;">
+    <div class="card-header">@Model.Nome</div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Email)</dt>
+            <dd class="col-sm-8">@Html.DisplayFor(model => model.Email)</dd>
+
+            <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Telefone)</dt>
+            <dd class="col-sm-8">@Html.DisplayFor(model => model.Telefone)</dd>
+        </dl>
+    </div>
+</div>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Excluir</button>
+    <a asp-action="Index" class="btn btn-outline-secondary">Voltar</a>
+</form>

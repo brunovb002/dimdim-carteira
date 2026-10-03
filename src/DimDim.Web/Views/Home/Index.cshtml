@@ -1,0 +1,38 @@
+@model DimDim.Web.Models.HomeSummaryViewModel
+@{
+    ViewData["Title"] = "Início";
+}
+
+<div class="text-center mb-4">
+    <h1 class="display-5 fw-bold">DimDim Carteira</h1>
+    <p class="lead">Gerencie seus clientes e transações de pagamento (PIX, boleto, cartão).</p>
+</div>
+
+<div class="row g-3">
+    <div class="col-md-4">
+        <div class="card card-dimdim h-100">
+            <div class="card-header">Clientes</div>
+            <div class="card-body text-center">
+                <p class="display-6">@Model.TotalClientes</p>
+                <a asp-controller="Clientes" asp-action="Index" class="btn btn-dimdim">Ver clientes</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card card-dimdim h-100">
+            <div class="card-header">Transações</div>
+            <div class="card-body text-center">
+                <p class="display-6">@Model.TotalTransacoes</p>
+                <a asp-controller="Transacoes" asp-action="Index" class="btn btn-dimdim">Ver transações</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card card-dimdim h-100">
+            <div class="card-header">Soma dos valores</div>
+            <div class="card-body text-center">
+                <p class="display-6">@Model.SomaValores.ToString("C2")</p>
+            </div>
+        </div>
+    </div>
+</div>

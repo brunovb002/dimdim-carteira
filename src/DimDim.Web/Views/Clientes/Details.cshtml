@@ -1,0 +1,49 @@
+@model DimDim.Web.Models.Cliente
+@{
+    ViewData["Title"] = "Detalhes do Cliente";
+}
+
+<h1>Detalhes do Cliente</h1>
+
+<div class="card card-dimdim mb-3" style="max-width: 500px;">
+    <div class="card-header">@Model.Nome</div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Email)</dt>
+            <dd class="col-sm-8">@Html.DisplayFor(model => model.Email)</dd>
+
+            <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Telefone)</dt>
+            <dd class="col-sm-8">@Html.DisplayFor(model => model.Telefone)</dd>
+
+            <dt class="col-sm-4">@Html.DisplayNameFor(model => model.DataCadastro)</dt>
+            <dd class="col-sm-8">@Model.DataCadastro.ToString("g")</dd>
+        </dl>
+    </div>
+</div>
+
+<h5>Transações deste cliente</h5>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Descrição</th>
+            <th>Valor</th>
+            <th>Tipo</th>
+            <th>Status</th>
+            <th>Data</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var t in Model.Transacoes) {
+        <tr>
+            <td>@t.Descricao</td>
+            <td>@t.Valor.ToString("C2")</td>
+            <td>@t.Tipo</td>
+            <td>@t.Status</td>
+            <td>@t.DataTransacao.ToString("g")</td>
+        </tr>
+}
+    </tbody>
+</table>
+
+<a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-outline-secondary">Editar</a>
+<a asp-action="Index" class="btn btn-outline-secondary">Voltar</a>

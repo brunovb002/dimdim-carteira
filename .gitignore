@@ -1,0 +1,20 @@
+# Build outputs
+bin/
+obj/
+publish/
+publish.zip
+
+# Segredos / configuração local
+.env
+*.local.json
+*.pubxml
+appsettings.*.local.json
+
+# Visual Studio / Rider
+.vs/
+*.user
+*.suo
+
+# OS
+.DS_Store
+Thumbs.db
