@@ -1,11 +1,9 @@
 name: Deploy DimDim
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 env:
-  WEBAPP_NAME: app-dimdim-grupo01     # ajuste
+  WEBAPP_NAME: app-dimdim-dimdim566366
   DOTNET_VERSION: "10.0.x"            # mesma versão do runtime do Web App
 
 jobs:

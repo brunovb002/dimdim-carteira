@@ -131,7 +131,7 @@ DDL completo em [`scripts/01-ddl.sql`](scripts/01-ddl.sql).
 
 ## 6. Deploy via GitHub Actions (opcional)
 
-Workflow em [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml). Requer o secret `AZURE_WEBAPP_PUBLISH_PROFILE` no repositório (obtido com `az webapp deployment list-publishing-profiles --xml`) e o ajuste do nome do Web App e da versão do .NET no próprio arquivo.
+Workflow em [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml), disparado manualmente (aba **Actions** → **Deploy DimDim** → **Run workflow**) para não rodar automaticamente a cada push. Requer o secret `AZURE_WEBAPP_PUBLISH_PROFILE` no repositório (obtido com `az webapp deployment list-publishing-profiles --xml`) antes de poder ser executado com sucesso.
 
 ## 7. Vídeo
 
