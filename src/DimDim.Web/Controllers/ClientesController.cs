@@ -49,6 +49,12 @@ public class ClientesController : Controller
     {
         if (ModelState.IsValid)
         {
+            if (await _context.Clientes.AnyAsync(c => c.Email == cliente.Email))
+            {
+                ModelState.AddModelError(nameof(Cliente.Email), "Já existe um cliente cadastrado com este e-mail.");
+                return View(cliente);
+            }
+
             cliente.DataCadastro = DateTime.UtcNow;
             _context.Add(cliente);
             await _context.SaveChangesAsync();
@@ -78,6 +84,12 @@ public class ClientesController : Controller
 
         if (ModelState.IsValid)
         {
+            if (await _context.Clientes.AnyAsync(c => c.Email == cliente.Email && c.Id != cliente.Id))
+            {
+                ModelState.AddModelError(nameof(Cliente.Email), "Já existe um cliente cadastrado com este e-mail.");
+                return View(cliente);
+            }
+
             try
             {
                 _context.Update(cliente);
