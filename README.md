@@ -142,4 +142,6 @@ Link: _a preencher_
 | Nome | RM |
 |---|---|
 | Bruno Vinicius Barbosa | 566366 |
-| _a preencher_ | _a preencher_ |
+| Guilherme de Andrade Martini | 566087 |
+| Raphael Gomes Mancera | 562279 |
+| _a preencher (se houver mais um integrante)_ | _a preencher_ |
