@@ -81,21 +81,17 @@ DDL completo em [`scripts/01-ddl.sql`](scripts/01-ddl.sql).
    export SQL_PASSWORD='SuaSenhaForte#2026'
    ```
 
-3. **Criar os recursos na Azure**
+3. **Criar os recursos, aplicar o DDL e fazer o deploy — tudo em uma execução**
 
    ```bash
-   bash scripts/02-criar-recursos.sh
+   bash scripts/05-tudo-em-um.sh
    ```
 
-   Cria Resource Group, Azure SQL Server + Database, Log Analytics, Application Insights, App Service Plan e Web App, além de configurar a connection string e a chave do Application Insights como App Settings do Web App.
+   Esse script roda, em sequência e sem intervenção manual no meio: criação do Resource Group, Azure SQL Server + Database, Log Analytics, Application Insights, App Service Plan e Web App (`scripts/02-criar-recursos.sh`); aplicação do DDL (`scripts/03-aplicar-ddl.sh`); publish da aplicação; e o deploy. A connection string e a chave do Application Insights já ficam configuradas como App Settings do Web App — nunca no `appsettings.json`.
 
-4. **Aplicar o DDL no banco**
+   > **Alternativa granular:** para rodar cada etapa separadamente (por exemplo, para narrar cada passo num vídeo), use `scripts/02-criar-recursos.sh`, depois `scripts/03-aplicar-ddl.sh`, e por fim publique com `dotnet publish src/DimDim.Web -c Release -o publish` + `powershell -ExecutionPolicy Bypass -File scripts/make-zip.ps1` (gera o zip com `/` em vez de `\` nos caminhos internos — o `Compress-Archive` do PowerShell usa `\`, o que quebra o `rsync` no App Service Linux) + `az webapp deploy --resource-group <rg> --name <webapp> --src-path publish.zip --type zip`.
 
-   ```bash
-   bash scripts/03-aplicar-ddl.sh
-   ```
-
-5. **Rodar localmente para validar (opcional)**
+4. **Rodar localmente para validar (opcional)**
 
    ```bash
    cd src/DimDim.Web
@@ -107,23 +103,15 @@ DDL completo em [`scripts/01-ddl.sql`](scripts/01-ddl.sql).
 
    Rodar local contra o Azure SQL é só para desenvolvimento — a entrega final precisa estar publicada no App Service.
 
-6. **Publicar e fazer o deploy**
-
-   ```bash
-   bash scripts/04-deploy.sh
-   ```
-
-   > No Windows, se o `zip` não estiver disponível: publique com `dotnet publish src/DimDim.Web -c Release -o publish`, gere o zip com [`scripts/make-zip.ps1`](scripts/make-zip.ps1) (`powershell -ExecutionPolicy Bypass -File scripts/make-zip.ps1`) e rode `az webapp deploy --resource-group <rg> --name <webapp> --src-path publish.zip --type zip`. O script existe porque o `Compress-Archive` do PowerShell grava os caminhos internos do zip com `\`, o que quebra o `rsync` no App Service (que roda em Linux e espera `/`).
-
-7. **Acessar e testar**
+5. **Acessar e testar**
 
    Abra `https://<nome-do-webapp>.azurewebsites.net` e teste o CRUD de Clientes e Transações.
 
-8. **Ver o Application Insights**
+6. **Ver o Application Insights**
 
    No portal do Azure, abra o recurso Application Insights do grupo e consulte **Live Metrics** (dados em tempo real) ou **Transaction search / Logs** (consultas como `requests` e `traces` em Kusto/KQL) para ver as requisições e os logs customizados da aplicação (ex.: "Cliente criado", "Transação excluída").
 
-9. **Excluir todos os recursos** (ao final do curso, para não gerar custo)
+7. **Excluir todos os recursos** (ao final do curso, para não gerar custo)
 
    ```bash
    az group delete --name <nome-do-resource-group> --yes --no-wait
