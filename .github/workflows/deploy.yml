@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
 
 env:
-  WEBAPP_NAME: app-dimdim-dimdim566366
+  WEBAPP_NAME: app-dimdim566366v2
   DOTNET_VERSION: "10.0.x"            # mesma versão do runtime do Web App
 
 jobs:

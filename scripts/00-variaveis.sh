@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Ajuste os valores. NÃO colocar senha aqui.
-export SUFIXO="dimdim566366"                # tema DimDim + RM
+export SUFIXO="dimdim566366v2"              # tema DimDim + RM (v2: nomes antigos ficaram reservados globalmente após desativação da assinatura anterior)
 export LOCATION="centralus"                  # regiões permitidas pela política da assinatura: canadacentral, eastus, southcentralus, centralus, northcentralus (eastus sem capacidade p/ SQL no momento)
 export RG="rg-dimdim-${SUFIXO}"
 export SQL_SERVER="sql-dimdim-${SUFIXO}"
