@@ -113,7 +113,7 @@ DDL completo em [`scripts/01-ddl.sql`](scripts/01-ddl.sql).
    bash scripts/04-deploy.sh
    ```
 
-   > No Windows, se o `zip` não estiver disponível, publique com `dotnet publish src/DimDim.Web -c Release -o publish` e gere o `.zip` garantindo que os caminhos internos usem `/` (barra normal) e não `\`, pois o App Service roda em Linux. Em seguida: `az webapp deploy --resource-group <rg> --name <webapp> --src-path publish.zip --type zip`.
+   > No Windows, se o `zip` não estiver disponível: publique com `dotnet publish src/DimDim.Web -c Release -o publish`, gere o zip com [`scripts/make-zip.ps1`](scripts/make-zip.ps1) (`powershell -ExecutionPolicy Bypass -File scripts/make-zip.ps1`) e rode `az webapp deploy --resource-group <rg> --name <webapp> --src-path publish.zip --type zip`. O script existe porque o `Compress-Archive` do PowerShell grava os caminhos internos do zip com `\`, o que quebra o `rsync` no App Service (que roda em Linux e espera `/`).
 
 7. **Acessar e testar**
 
