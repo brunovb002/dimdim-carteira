@@ -1,64 +1,178 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 560" font-family="Segoe UI, Arial, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 620" font-family="Segoe UI, Arial, sans-serif">
   <defs>
-    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-      <path d="M0,0 L10,5 L0,10 z" fill="#333" />
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4a4a4a" />
     </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.18" />
+    </filter>
+
+    <!-- Icon symbols -->
+    <symbol id="icon-browser" viewBox="0 0 48 48">
+      <rect x="3" y="7" width="42" height="34" rx="4" fill="#ffffff" stroke="#50535a" stroke-width="2"/>
+      <rect x="3" y="7" width="42" height="9" rx="4" fill="#50535a"/>
+      <circle cx="9" cy="11.5" r="1.6" fill="#ffffff"/>
+      <circle cx="14" cy="11.5" r="1.6" fill="#ffffff"/>
+      <circle cx="19" cy="11.5" r="1.6" fill="#ffffff"/>
+      <path d="M24 22 L24 34 M18 28 L30 28" stroke="#50535a" stroke-width="2.4" stroke-linecap="round"/>
+    </symbol>
+
+    <symbol id="icon-user" viewBox="0 0 48 48">
+      <circle cx="24" cy="16" r="9" fill="#50535a"/>
+      <path d="M6 42 C6 29 14 24 24 24 C34 24 42 29 42 42 Z" fill="#50535a"/>
+    </symbol>
+
+    <symbol id="icon-appservice" viewBox="0 0 48 48">
+      <rect x="4" y="4" width="40" height="40" rx="6" fill="#ffffff" fill-opacity="0.15"/>
+      <path d="M12 30 L12 18 L24 10 L36 18 L36 30 L24 38 Z" fill="#ffffff"/>
+      <path d="M24 10 L24 38 M12 18 L36 18" stroke="#0078D4" stroke-width="1.5"/>
+    </symbol>
+
+    <symbol id="icon-sql" viewBox="0 0 48 48">
+      <ellipse cx="24" cy="12" rx="17" ry="6.5" fill="#ffffff"/>
+      <path d="M7 12 L7 34 C7 37.5 14.7 40.5 24 40.5 C33.3 40.5 41 37.5 41 34 L41 12" fill="none" stroke="#ffffff" stroke-width="3.2"/>
+      <path d="M7 23 C7 26.5 14.7 29.5 24 29.5 C33.3 29.5 41 26.5 41 23" fill="none" stroke="#ffffff" stroke-width="2.4" opacity="0.85"/>
+    </symbol>
+
+    <symbol id="icon-insights" viewBox="0 0 48 48">
+      <circle cx="24" cy="24" r="17" fill="none" stroke="#ffffff" stroke-width="2.4"/>
+      <path d="M10 26 L17 26 L21 15 L27 33 L31 22 L38 22" fill="none" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+    <symbol id="icon-loganalytics" viewBox="0 0 48 48">
+      <rect x="8" y="8" width="24" height="30" rx="2.5" fill="#ffffff" opacity="0.92"/>
+      <line x1="13" y1="16" x2="27" y2="16" stroke="#5c2d91" stroke-width="2"/>
+      <line x1="13" y1="22" x2="27" y2="22" stroke="#5c2d91" stroke-width="2"/>
+      <line x1="13" y1="28" x2="22" y2="28" stroke="#5c2d91" stroke-width="2"/>
+      <circle cx="33" cy="34" r="7" fill="none" stroke="#ffffff" stroke-width="2.6"/>
+      <line x1="38" y1="39" x2="42.5" y2="43.5" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round"/>
+    </symbol>
+
+    <symbol id="icon-dev" viewBox="0 0 48 48">
+      <rect x="4" y="9" width="40" height="25" rx="3" fill="#50535a"/>
+      <rect x="8" y="13" width="32" height="17" rx="1.5" fill="#1a1a1a"/>
+      <text x="24" y="25" font-family="Consolas, monospace" font-size="11" fill="#7CFC00" text-anchor="middle">&gt;_</text>
+      <rect x="14" y="36" width="20" height="4" rx="2" fill="#50535a"/>
+    </symbol>
+
+    <symbol id="icon-repo" viewBox="0 0 48 48">
+      <circle cx="24" cy="24" r="19" fill="#ffffff" fill-opacity="0.12" stroke="#50535a" stroke-width="2"/>
+      <circle cx="24" cy="17" r="5" fill="#50535a"/>
+      <path d="M13 34 C13 27 17.5 24 24 24 C30.5 24 35 27 35 34" fill="none" stroke="#50535a" stroke-width="3" stroke-linecap="round"/>
+    </symbol>
   </defs>
 
-  <rect x="0" y="0" width="980" height="560" fill="#ffffff" />
+  <rect x="0" y="0" width="1040" height="620" fill="#ffffff" />
 
-  <!-- Usuario -->
-  <rect x="30" y="230" width="150" height="70" rx="10" fill="#f5f5f5" stroke="#333" stroke-width="1.5" />
-  <text x="105" y="260" text-anchor="middle" font-size="14" font-weight="bold">Usuário</text>
-  <text x="105" y="280" text-anchor="middle" font-size="12">Navegador</text>
+  <text x="40" y="34" font-size="20" font-weight="700" fill="#1a1a1a">DimDim Carteira — Arquitetura na Azure</text>
+  <text x="40" y="54" font-size="12.5" fill="#5f6368">Fluxo numerado: do desenvolvedor até a aplicação em produção, com telemetria</text>
 
-  <!-- Dev -->
-  <rect x="30" y="20" width="170" height="80" rx="10" fill="#f5f5f5" stroke="#333" stroke-width="1.5" />
-  <text x="115" y="48" text-anchor="middle" font-size="14" font-weight="bold">Dev</text>
-  <text x="115" y="66" text-anchor="middle" font-size="12">az CLI + GitHub</text>
-  <text x="115" y="84" text-anchor="middle" font-size="11">Actions / webapp deploy</text>
+  <!-- Persona: Usuário -->
+  <g transform="translate(40,230)">
+    <circle cx="48" cy="40" r="46" fill="#eef3f8" filter="url(#shadow)"/>
+    <use href="#icon-user" x="24" y="16" width="48" height="48"/>
+    <text x="48" y="100" font-size="13" font-weight="600" text-anchor="middle" fill="#1a1a1a">Usuário final</text>
+  </g>
+  <g transform="translate(140,250)">
+    <use href="#icon-browser" x="0" y="0" width="40" height="40"/>
+  </g>
 
-  <!-- Resource group box -->
-  <rect x="260" y="20" width="680" height="470" rx="14" fill="#fffbe6" stroke="#ffd400" stroke-width="2" />
-  <text x="280" y="48" font-size="14" font-weight="bold" fill="#5c4d00">Microsoft Azure — Resource Group rg-dimdim-*</text>
+  <!-- Persona: Dev -->
+  <g transform="translate(40,20)">
+    <rect x="0" y="60" width="170" height="92" rx="12" fill="#f2f2f2" stroke="#d0d0d0" stroke-width="1.5" filter="url(#shadow)"/>
+    <use href="#icon-dev" x="16" y="78" width="46" height="46"/>
+    <text x="72" y="98" font-size="13" font-weight="700" fill="#1a1a1a">Desenvolvedor</text>
+    <text x="72" y="115" font-size="11.5" fill="#444">Azure CLI</text>
+    <text x="72" y="130" font-size="11.5" fill="#444">(criação + deploy)</text>
+  </g>
+
+  <!-- Resource Group container -->
+  <rect x="300" y="90" width="700" height="370" rx="18" fill="#fffdf4" stroke="#ffd400" stroke-width="2.5" stroke-dasharray="2,0"/>
+  <text x="322" y="118" font-size="14" font-weight="700" fill="#8a6d00">Azure — Resource Group rg-dimdim-*</text>
 
   <!-- App Service -->
-  <rect x="300" y="230" width="190" height="90" rx="10" fill="#1a1a1a" />
-  <text x="395" y="262" text-anchor="middle" font-size="14" font-weight="bold" fill="#ffd400">App Service</text>
-  <text x="395" y="282" text-anchor="middle" font-size="12" fill="#ffffff">ASP.NET Core MVC</text>
-  <text x="395" y="299" text-anchor="middle" font-size="11" fill="#ffffff">Linux · Plano B1</text>
+  <g transform="translate(360,170)">
+    <rect x="0" y="0" width="190" height="110" rx="14" fill="#1a1a1a" filter="url(#shadow)"/>
+    <use href="#icon-appservice" x="18" y="14" width="46" height="46"/>
+    <text x="72" y="36" font-size="14" font-weight="700" fill="#ffd400">App Service</text>
+    <text x="18" y="80" font-size="11.5" fill="#ffffff">ASP.NET Core MVC</text>
+    <text x="18" y="96" font-size="11" fill="#cfcfcf">Linux · Plano B1</text>
+  </g>
 
   <!-- Azure SQL -->
-  <rect x="620" y="150" width="200" height="90" rx="10" fill="#0078d4" />
-  <text x="720" y="182" text-anchor="middle" font-size="14" font-weight="bold" fill="#ffffff">Azure SQL Database</text>
-  <text x="720" y="202" text-anchor="middle" font-size="12" fill="#ffffff">CLIENTE / TRANSACAO</text>
-  <text x="720" y="219" text-anchor="middle" font-size="11" fill="#ffffff">Tier Basic</text>
+  <g transform="translate(690,170)">
+    <rect x="0" y="0" width="210" height="110" rx="14" fill="#0078D4" filter="url(#shadow)"/>
+    <use href="#icon-sql" x="18" y="14" width="46" height="46"/>
+    <text x="72" y="36" font-size="14" font-weight="700" fill="#ffffff">Azure SQL Database</text>
+    <text x="18" y="80" font-size="11.5" fill="#eaf3fc">CLIENTE · TRANSACAO</text>
+    <text x="18" y="96" font-size="11" fill="#cfe4f7">Tier Basic</text>
+  </g>
 
   <!-- Application Insights -->
-  <rect x="620" y="300" width="200" height="80" rx="10" fill="#5c2d91" />
-  <text x="720" y="332" text-anchor="middle" font-size="14" font-weight="bold" fill="#ffffff">Application</text>
-  <text x="720" y="350" text-anchor="middle" font-size="14" font-weight="bold" fill="#ffffff">Insights</text>
-  <text x="720" y="368" text-anchor="middle" font-size="11" fill="#ffffff">Telemetria da app</text>
+  <g transform="translate(360,340)">
+    <rect x="0" y="0" width="190" height="100" rx="14" fill="#5c2d91" filter="url(#shadow)"/>
+    <use href="#icon-insights" x="18" y="12" width="40" height="40"/>
+    <text x="66" y="32" font-size="13.5" font-weight="700" fill="#ffffff">Application</text>
+    <text x="66" y="48" font-size="13.5" font-weight="700" fill="#ffffff">Insights</text>
+    <text x="18" y="76" font-size="11" fill="#e4d9f3">Telemetria e logs</text>
+  </g>
 
   <!-- Log Analytics -->
-  <rect x="620" y="420" width="200" height="60" rx="10" fill="#8661c5" />
-  <text x="720" y="446" text-anchor="middle" font-size="13" font-weight="bold" fill="#ffffff">Log Analytics</text>
-  <text x="720" y="463" text-anchor="middle" font-size="11" fill="#ffffff">Workspace</text>
+  <g transform="translate(690,340)">
+    <rect x="0" y="0" width="210" height="100" rx="14" fill="#8661c5" filter="url(#shadow)"/>
+    <use href="#icon-loganalytics" x="18" y="12" width="40" height="40"/>
+    <text x="66" y="38" font-size="13.5" font-weight="700" fill="#ffffff">Log Analytics</text>
+    <text x="18" y="76" font-size="11" fill="#ece6f7">Armazena os dados de telemetria</text>
+  </g>
+
+  <!-- GitHub (externo à Azure, fora do Resource Group) -->
+  <g transform="translate(40,500)">
+    <rect x="0" y="0" width="960" height="68" rx="14" fill="#24292e" filter="url(#shadow)"/>
+    <use href="#icon-repo" x="18" y="9" width="46" height="46"/>
+    <text x="74" y="31" font-size="13.5" font-weight="700" fill="#ffffff">Repositório GitHub (externo à Azure)</text>
+    <text x="74" y="49" font-size="11" fill="#c9d1d9">Código-fonte, scripts, DDL e README (how-to)</text>
+  </g>
 
   <!-- Arrows -->
-  <line x1="180" y1="265" x2="298" y2="270" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
-  <text x="235" y="255" text-anchor="middle" font-size="11">HTTPS</text>
+  <!-- Dev -> App Service (1: criação + deploy) -->
+  <path d="M210 150 C 270 150, 300 170, 358 215" fill="none" stroke="#4a4a4a" stroke-width="2" marker-end="url(#arrow)"/>
+  <circle cx="260" cy="150" r="11" fill="#ffd400" stroke="#1a1a1a" stroke-width="1.5"/>
+  <text x="260" y="154" font-size="11" font-weight="700" text-anchor="middle" fill="#1a1a1a">1</text>
 
-  <line x1="200" y1="60" x2="300" y2="250" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
-  <text x="250" y="140" text-anchor="middle" font-size="11" transform="rotate(55 250 140)">deploy</text>
+  <!-- Dev -> GitHub (0: push do código) -->
+  <path d="M55 172 C 15 230, 10 400, 15 495" fill="none" stroke="#4a4a4a" stroke-width="2" marker-end="url(#arrow)"/>
+  <circle cx="15" cy="380" r="11" fill="#ffd400" stroke="#1a1a1a" stroke-width="1.5"/>
+  <text x="15" y="384" font-size="11" font-weight="700" text-anchor="middle" fill="#1a1a1a">0</text>
 
-  <line x1="490" y1="255" x2="618" y2="205" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
-  <text x="560" y="220" text-anchor="middle" font-size="11">EF Core · TCP 1433</text>
+  <!-- App Service -> SQL (2: EF Core / TCP 1433) -->
+  <path d="M550 212 C 610 212, 630 212, 688 218" fill="none" stroke="#4a4a4a" stroke-width="2" marker-end="url(#arrow)"/>
+  <circle cx="618" cy="212" r="11" fill="#ffd400" stroke="#1a1a1a" stroke-width="1.5"/>
+  <text x="618" y="216" font-size="11" font-weight="700" text-anchor="middle" fill="#1a1a1a">2</text>
+  <text x="560" y="203" font-size="10.5" fill="#444">EF Core · TCP 1433</text>
 
-  <line x1="490" y1="285" x2="618" y2="335" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
-  <text x="560" y="320" text-anchor="middle" font-size="11">Telemetria</text>
+  <!-- App Service -> Application Insights (3: telemetria) -->
+  <path d="M440 280 C 440 305, 440 320, 440 338" fill="none" stroke="#4a4a4a" stroke-width="2" marker-end="url(#arrow)"/>
+  <circle cx="440" cy="310" r="11" fill="#ffd400" stroke="#1a1a1a" stroke-width="1.5"/>
+  <text x="440" y="314" font-size="11" font-weight="700" text-anchor="middle" fill="#1a1a1a">3</text>
 
-  <line x1="720" y1="380" x2="720" y2="418" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+  <!-- Application Insights -> Log Analytics -->
+  <path d="M552 388 C 600 388, 640 388, 688 388" fill="none" stroke="#4a4a4a" stroke-width="2" marker-end="url(#arrow)"/>
 
-  <text x="600" y="505" text-anchor="middle" font-size="12" fill="#5c4d00">DimDim Carteira — arquitetura de implantação na nuvem (Azure)</text>
+  <!-- Usuário -> App Service (4: HTTPS) -->
+  <path d="M180 260 C 250 230, 300 215, 358 212" fill="none" stroke="#4a4a4a" stroke-width="2" marker-end="url(#arrow)"/>
+  <circle cx="280" cy="222" r="11" fill="#ffd400" stroke="#1a1a1a" stroke-width="1.5"/>
+  <text x="280" y="226" font-size="11" font-weight="700" text-anchor="middle" fill="#1a1a1a">4</text>
+  <text x="230" y="245" font-size="10.5" fill="#444">HTTPS</text>
+
+  <!-- Legend -->
+  <g transform="translate(40,352)">
+    <text x="0" y="0" font-size="12.5" font-weight="700" fill="#1a1a1a">Legenda do fluxo</text>
+    <text x="0" y="20" font-size="11" fill="#333">0 — Dev envia o código pro GitHub</text>
+    <text x="0" y="36" font-size="11" fill="#333">1 — Dev roda o Azure CLI: cria</text>
+    <text x="0" y="50" font-size="11" fill="#333">     recursos e publica o app</text>
+    <text x="0" y="66" font-size="11" fill="#333">2 — App Service ↔ Azure SQL (EF Core)</text>
+    <text x="0" y="82" font-size="11" fill="#333">3-4 — Telemetria e acesso HTTPS</text>
+  </g>
+
+  <text x="520" y="590" text-anchor="middle" font-size="11" fill="#8a6d00">DimDim Carteira — arquitetura de implantação na nuvem (Azure)</text>
 </svg>
