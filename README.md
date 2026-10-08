@@ -144,4 +144,4 @@ Link: _a preencher_
 | Bruno Vinicius Barbosa | 566366 |
 | Guilherme de Andrade Martini | 566087 |
 | Raphael Gomes Mancera | 562279 |
-| _a preencher (se houver mais um integrante)_ | _a preencher_ |
+| Nathan Gonçalves Pereira Mendes | 564666 |
