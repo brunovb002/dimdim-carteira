@@ -123,7 +123,7 @@ Workflow em [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml), disp
 
 ## 7. Vídeo
 
-Link: _a preencher_
+Link: https://youtu.be/Q-wIhM2Id3s
 
 ## 8. Integrantes
 
